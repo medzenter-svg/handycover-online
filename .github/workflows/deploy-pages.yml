@@ -20,6 +20,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Create complete static copy from live site
         shell: bash
         run: |
@@ -100,6 +103,10 @@ jobs:
               -e 's|http://www\.handycover\.online|https://www.handycover.online|g' \
               -e 's|http://handycover\.com|https://handycover.com|g' \
               -e 's|http://www\.handycover\.com|https://www.handycover.com|g'
+
+          cp store-theme.css dist/store-theme.css
+          find dist -type f -name '*.html' -print0 \
+            | xargs -0 sed -i 's|</head>|<link rel="stylesheet" href="/store-theme.css"></head>|'
 
           echo "handycover.online" > dist/CNAME
           cp dist/index.html dist/404.html
