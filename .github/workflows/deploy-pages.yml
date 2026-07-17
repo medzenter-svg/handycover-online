@@ -105,8 +105,15 @@ jobs:
               -e 's|http://www\.handycover\.com|https://www.handycover.com|g'
 
           cp store-theme.css dist/store-theme.css
+          cp online-enhance.js dist/online-enhance.js
+          if [ -f favicon-online.svg ]; then
+            cp favicon-online.svg dist/favicon.svg
+          fi
           find dist -type f -name '*.html' -print0 \
-            | xargs -0 sed -i 's|</head>|<link rel="stylesheet" href="/store-theme.css"></head>|'
+            | xargs -0 sed -i \
+              -e 's|</head>|<link rel="stylesheet" href="/store-theme.css"><script defer src="/online-enhance.js"></script></head>|' \
+              -e 's|favicon\.svg?v=2|favicon.svg?v=3|g' \
+              -e 's|favicon\.svg%3Fv=2|favicon.svg%3Fv=3|g'
 
           echo "handycover.online" > dist/CNAME
           cp dist/index.html dist/404.html
