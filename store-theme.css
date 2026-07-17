@@ -1,0 +1,11 @@
+/* --- Hero "Amazon Picks" mini-cards: bigger + bolder (cards only, nothing else touched) --- */
+a[class*="w-[110px]"][class*="shrink-0"]{width:152px!important;border-radius:20px!important}
+a[class*="w-[110px]"][class*="shrink-0"] > div:first-child{padding:14px 10px 8px!important}
+a[class*="w-[110px]"][class*="shrink-0"] img{height:100px!important;width:100px!important}
+a[class*="w-[110px]"][class*="shrink-0"] > div:last-child{padding:10px 12px 12px!important}
+a[class*="w-[110px]"][class*="shrink-0"] span[class*="text-[8px]"][class*="uppercase"]{font-size:10px!important;padding:3px 8px!important}
+a[class*="w-[110px]"][class*="shrink-0"] p[class*="text-[10px]"]{font-size:14px!important;margin-top:2px!important}
+a[class*="w-[110px]"][class*="shrink-0"] span[class*="text-[11px]"]{font-size:16px!important}
+a[class*="w-[110px]"][class*="shrink-0"] span[class*="4B0082"]{width:28px!important;height:28px!important;padding:0!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;font-size:14px!important;box-shadow:none!important}
+@media(max-width:1050px){a[class*="w-[110px]"][class*="shrink-0"]{width:132px!important}a[class*="w-[110px]"][class*="shrink-0"] img{height:88px!important;width:88px!important}}
+@media(max-width:700px){a[class*="w-[110px]"][class*="shrink-0"]{width:116px!important}a[class*="w-[110px]"][class*="shrink-0"] img{height:76px!important;width:76px!important}a[class*="w-[110px]"][class*="shrink-0"] p[class*="text-[10px]"]{font-size:12px!important}}
